@@ -40,5 +40,29 @@
 
 
 
-;(print (separate `(a b c d e f g)))
-;((A C E G) (B D F)) 
+(print (separate `(a b c d e f g))
+((A C E G) (B D F))
+45. Напишите функцию (РАССТОЯНИЕ c1 c2), вычисляющую расстояние между городами.
+
+(defun Road (city1 &optional(city2 `Saki)) 
+  (sqrt (+ (expt (- (get city1 'x) (get city2 'x)) 2)
+           (expt (- (get city1 'y) (get city2 'y)) 2))
+  )
+)
+ 
+(defun City(Name-of-the-city &key x y ) 
+    (setf (get Name-of-the-city 'x) x)
+    (setf (get Name-of-the-city 'y) y)
+  
+)
+
+(City  'Bali :x 1770 :y -445)
+(City  'Saki :x -300 :y 50)
+
+
+(print(Road 'Bali 'Saki))
+2128.362 
+(print(Road 'Saki ))
+0
+(print(Road 'Saki 'Bali))
+2128.362 
