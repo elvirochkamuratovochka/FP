@@ -7,16 +7,22 @@
 (print(scal-prod '(0 ) ' (3  4  2))) 
 
 
-; № 3 Определите функцию, заменяющую в исходном списке все вхождения заданного значения другим
+;Задача 3 Определите функцию, заменяющую в исходном списке все вхождения заданного значения другими
 
-(defun replac (x repEl list)
-   (cond ((null list) nil)
-         ((equal (car list) repEl) (cons x (replac x repEl (cdr list))))
-         ((cons (car list) (replac x repEl (cdr list))))
-    )
+ (defun rep (lst  needch  (turn 0))
+    ((lambda (first rest)
+        (cond ((null lst) nil)
+           (( eq first needch) (cons r (rep rest needch turn))
+                     (t (cons first (rep rest needch turn))))
+     )
+     (car lst)(cdr lst)
+   )
 )
- 
-(print(replac 6 1 '(1 2 3 4 5 6 6)))
+        
+;(print (rep '(1 2 3 1 1) 1 'a))
+;(A 2 3 A A) 
+;(print (rep '((1 2 3) 4 5 6 1) 1 44))
+;((44 2 3) 4 5 6 44)
 ;Задача 9
 
 ;Определите функцию, раздляющую список на 2 списка. С четными номерами и нечетными.
