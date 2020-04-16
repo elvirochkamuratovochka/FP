@@ -13,24 +13,23 @@
 )
 
 (print (dr2 '(1 1 2 1 2 1)))
-(1 2 1 2 1)
 (print (dr2 '(2 2 1 2 1 2)))
-(2 1 2 1 2)
 
 ;Задача 30 Определите функцию, удаляющие в исходном списке все повторные вхождения элементов.
-(defun pref (lst)
+
+(defun prefix (lst)
    (cond ((null lst) nil)
          ((atom lst) lst)
-         (t (list (prefix (cadr lst)) (pref (car lst) ) (prefix (caddr lst)))
+         (t (list (prefix (cadr lst)) (prefix (car lst) ) (prefix (caddr lst)))
          )
     )
  )
 
 
-(print  (calculate '((-2 + 9 ) *  4 )))
-(print  (prefix '((-2 + 9 ) *  4 )))
-(print  (calculate '((7 + -3 ) *  6 )))
+
+(print  (prefix '((-2 + 2 ) *  4 )))
 (print  (prefix '((7 + -3 ) *  6 )))
+(print  (prefix '((1 + 15 ) *  2 )))
 
 
 ;Задача 3 Определите функцию, заменяющую в исходном списке все вхождения заданного значения другими
@@ -43,10 +42,8 @@
 
         
 (print (rep '(1 2 3 1 1) 1 'a))
-(A 2 3 A A) 
-(print (rep '((1 2 3) 4 5 6 1) 1 44))
-((44 2 3) 4 5 6 44)
 
+(print (rep '((1 2 3) 4 5 6 1) 1 44))
 
 ;Задача 9  Определите функцию, раздляющую список на 2 списка. С четными номерами и нечетными.
 
