@@ -55,6 +55,24 @@
 
 (print (is_linear `(1 2 2 5)))
 (print (is_linear `(1 (2 3) 5)))
+;Задача 9  Определите функцию, раздляющую список на 2 списка. С четными номерами и нечетными.
+
+
+(defun str (ls)
+               ((lambda (el-cddr) 
+                (cond ((null (car ls)) ls)
+                    (t 
+                        (list
+                            (cons (car ls) (car(str el-cddr)))
+                            (cons (cadr ls) (car(str el-cddr)))
+                        )
+                    )
+                ) ) (cddr ls) )
+)
+
+(print (str '(1 7 6 4 53 6 11 67)))
+(print (str '(h e l l o)))
+(print (str `(a b c d e f g)))
 
 ;45. Напишите функцию (РАССТОЯНИЕ c1 c2), вычисляющую расстояние между городами.
 
