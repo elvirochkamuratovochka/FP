@@ -1,9 +1,11 @@
-;1 Определите FUNCALL через функционал APPLY.
+;3. Определите функционал который применяет каждую функ-цию списка к списку х возвращает список, сформированный из результатов(defun list-to-list-function (lst1 lst2)
+    (cond
+         ((null (car lst1)) nil) 
+         (t (cons (apply (car lst1) lst2)
+                  (list-to-list-function (cdr lst1) lst2))))             
+)
 
-(defun funcall-1 (f &rest x) (apply f x))
-
-(print (funcall-1 '+ 2 3 4))
-9
+(print (list-to-list-function '(+ - * +) '(1 2 3 4 5))) 
 ;5 Определитефункциональныйпредикат(НЕКОТОРЫй пред список),которыйистинен, когда, являющейся функциональным аргументом предикат пред истинен хотя бы для одного элемента списка список.
 
 (defun some-1 (p li)
@@ -12,13 +14,10 @@
 )
 
 (print (some-1 'numberp '(5 e u 9)))
-T
 (print (some-1 'numberp '(5g e7 u r)))
-NIL
 (print (some-1 'numberp '((5 6 7) e u p)))
-NIL
 (print (some-1 'numberp '(5)))
-T
+
 ;9 Напишите генератор порождения чисел Фибоначчи: 0, 1, 1, 2, 3, 5, ...
 
 (defun fib ()
