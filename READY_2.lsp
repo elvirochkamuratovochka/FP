@@ -33,14 +33,13 @@
 
 (print (setq f (fib)))
 (print (funcall f))
-0
+
 (print (funcall f))
-1
+
 (print (funcall f))
-1
+
 (print (funcall f))
-2
+
 (print (funcall f))
-3
+
 (print (funcall f))
-5
