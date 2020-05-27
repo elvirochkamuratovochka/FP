@@ -62,7 +62,8 @@ Racket — современная платформа для разработки
   (cond [(zero? n) 1]
         [else (* n (fact (- n 1)))]))
 ```
-#ccылки на источники
+
+# ccылки на источники
 
 https://docs.racket-lang.org/racket-cheat/index.html
 
